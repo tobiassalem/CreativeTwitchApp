@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ========= [Backend Default] ========== -->
+    <string-array name="backend_empty">
+        <!-- Results is an empty map with only a default message -->
+    </string-array>
+
+    <string name="error_message_backend_default">Could not contact the backend system. Please try again later.</string>
+    <string name="error_message_data_default">Missing or corrupt data from the backend system. Please try again later.</string>
+    <string name="error_message_game_logo_loading">Could not load the game logo, using default.</string>
+</resources>

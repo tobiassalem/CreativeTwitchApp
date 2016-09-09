@@ -1,0 +1,15 @@
+<resources>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="margin_fab">16dp</dimen>
+    <dimen name="margin_text">16dp</dimen>
+
+    <dimen name="margin_sides_default">16dp</dimen>
+    <dimen name="margin_horizontal">10dp</dimen>
+    <dimen name="margin_horizontal_indent">20dp</dimen>
+    <dimen name="margin_horizontal_inside">8dp</dimen>
+    <dimen name="margin_vertical">10dp</dimen>
+    <dimen name="margin_vertical_inside">10dp</dimen>
+
+    <dimen name="width_webview_preview_image">80dp</dimen>
+</resources>
+
