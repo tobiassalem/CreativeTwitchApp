@@ -11,12 +11,13 @@ Upon selecting one of the games the top 10 streams for that games are listed.
 The possible improvements to the applications are of course many. The most relevant can easily be the following.
 
 * Implement instrumentation and unit tests. Especially for the JSON deserialization. [must have]
-* Convert the project to use Material Design best practices (e.g. RecycleView instead of ListView).
-* Implement support for more devices and screen resolutions (e.g. use Fragments and more image dpi versions).
-* Implement smarter caching for the game and stream images (at the moment WebView's out-of-the-box caching is used).
-* Implement an applications menu and Settings view where the number of top games and streams respectively can be selected.
-* Implement Twitch user authentication and thereby allow viewing and editing of favorite games.
-* Implement viewing of a selected stream.
+* Convert all async calls with callback hook methods to AsyncTasks for clarity. [nice to have]
+* Convert the project to use Material Design best practices (e.g. RecycleView instead of ListView). [nice to have]
+* Implement support for more devices and screen resolutions (e.g. use Fragments and more image dpi versions). [must have]
+* Implement smarter caching for the game and stream images (at the moment WebView's out-of-the-box caching is used). [must have]
+* Implement an applications menu and Settings view where the number of top games and streams respectively can be selected. [nice to have]
+* Implement Twitch user authentication and thereby allow viewing and editing of favorite games. [nice to have]
+* Implement viewing of a selected stream. [nice to have]
 
 There are of course many network libraries to choose from. I here selected Retrofit for it's elegance in defining and using backend endpoints.
 Concretely compared to RoboSpice which I've used before, Retrofit is really superior.
@@ -36,4 +37,4 @@ Import the Gradle aware project into Android Studio and run with your favorite e
 * Android SDK (min version 15, target version 23) - @See https://developer.android.com/
 * Gradle build tool - @See https://gradle.org/
 * Retrofit network library. - @See http://square.github.io/retrofit/
-* Clean Code by Robert C. Marting - @See https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
+* Clean Code by Robert C. Martin - @See https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
