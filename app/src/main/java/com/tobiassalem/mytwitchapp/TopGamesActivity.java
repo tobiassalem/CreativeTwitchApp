@@ -70,7 +70,7 @@ public class TopGamesActivity extends BaseActivity implements TopGamesResultList
     private void loadGameData() {
 
         TwitchApi apiService = buildApiService();
-        Call<TopGamesResultModel> call = apiService.getTopGames(LIMIT_NR_OF_GAMES);
+        Call<TopGamesResultModel> call = apiService.getTopGames(getLimitNrOfGames());
         call.enqueue(new Callback<TopGamesResultModel>() {
             @Override
             public void onResponse(Call<TopGamesResultModel> call, Response<TopGamesResultModel> response) {

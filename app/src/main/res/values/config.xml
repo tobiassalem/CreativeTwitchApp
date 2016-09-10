@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="splashTimeout">2</integer>
-    <integer name="cid_one">20</integer>
-    <integer name="cid_two">18</integer>
-    <integer name="cid_three">2</integer>
-    <integer name="cid_four">7</integer>
     <string name="serverBaseUrl">https://api.twitch.tv/</string>
-
+    <integer name="defaultTopGamesLimit">5</integer>
+    <integer name="defaultTopStreamsLimit">10</integer>
 </resources>
 

@@ -3,7 +3,7 @@
 A very simple proof of concept application illustrating how to connect to a backend API service and present the data with Android.
 The ambition is to use Best Practices like Clean Code and Design Patterns wherever possible. The motivations for this approach are plentiful, which every experienced developer knows, and the balance is with pragmatism.
 
-In this simple example the top 10 Twitch Games based on current viewers are listed. 
+In this simple example the top 5 Twitch Games based on current viewers are listed. 
 Upon selecting one of the games the top 10 streams for that games are listed.
 
 ### Possible improvements
@@ -17,6 +17,7 @@ The possible improvements to the applications are of course many. The most relev
 * Implement smarter caching for the game and stream images (at the moment WebView's out-of-the-box caching is used). [must have]
 * Implement an applications menu and Settings view where the number of top games and streams respectively can be selected. [nice to have]
 * Implement Twitch user authentication and thereby allow viewing and editing of favorite games. [nice to have]
+* Implement gesture detection for manually updating the respective top lists [nice to have]
 * Implement viewing of a selected stream. [nice to have]
 
 There are of course many network libraries to choose from. I here selected Retrofit for it's elegance in defining and using backend endpoints.
@@ -24,8 +25,7 @@ Concretely compared to RoboSpice which I've used before, Retrofit is really supe
 
 ### Known issues
 
-* The WebView component has some performance issues when used in a ListView.
-* All design specifications (sizes, colors and related) are not yet extracted to styles.xml
+* The WebView component does not have optimal performance when used in a ListView.
 * The applications is very simple in it's current form, as the possible improvements clearly indicate. 
 
 ### Installation

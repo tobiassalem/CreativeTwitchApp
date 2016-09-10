@@ -25,12 +25,28 @@
         <item name="android:divider">@drawable/divider_light_horizontal</item>
     </style>
 
-    <style name="title">
+    <style name="textTitle">
         <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">@color/gray_strong</item>
+        <item name="android:textColor">@color/text_dark_primary</item>
         <item name="android:textStyle">normal</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">@dimen/margin_text</item>
+    </style>
+
+    <style name="textListItemTitle">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/gray_strong</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="textListItemDescription">
+        <item name="android:layout_height">26dp</item>
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/text_dark_secondary</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
 </resources>

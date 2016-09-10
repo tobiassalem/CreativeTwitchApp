@@ -69,7 +69,7 @@ public class TopStreamsActivity extends BaseActivity implements TopStreamsResult
     private void loadStreamData() {
 
         TwitchApi apiService = buildApiService();
-        Call<TopStreamsResultModel> call = apiService.getTopStreamsForGame(gameTitle, LIMIT_NR_OF_STREAMS);
+        Call<TopStreamsResultModel> call = apiService.getTopStreamsForGame(gameTitle, getLimitNrOfStreams());
         call.enqueue(new Callback<TopStreamsResultModel>() {
             @Override
             public void onResponse(Call<TopStreamsResultModel> call, Response<TopStreamsResultModel> response) {

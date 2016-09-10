@@ -17,7 +17,7 @@
         android:src="@drawable/star_stream"/>
 
     <TextView
-        style="@style/title"
+        style="@style/textTitle"
         android:id="@+id/streamTopListTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -18,8 +18,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public abstract class BaseActivity extends Activity {
 
     public static final String KEY_GAME_TITLE = "gameTitle";
-    protected static final int LIMIT_NR_OF_GAMES = 10;
-    protected static final int LIMIT_NR_OF_STREAMS = 10;
+
+    protected int getLimitNrOfGames() {
+        return getResources().getInteger(R.integer.defaultTopGamesLimit);
+    }
+
+    protected int getLimitNrOfStreams() {
+        return getResources().getInteger(R.integer.defaultTopStreamsLimit);
+    }
 
     protected TwitchApi buildApiService() {
         Gson gson = new GsonBuilder()
