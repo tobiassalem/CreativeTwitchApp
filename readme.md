@@ -1,9 +1,10 @@
-### Summary
+### Overview
 
-A very simple proof of concept application illustrating how to connect to a backend API service and present the data with Android.
+A very simple proof of concept application illustrating how to connect to a backend service and present the data with Android.
 The ambition is to use Best Practices like Clean Code and Design Patterns wherever possible. The motivations for this approach are plentiful, which every experienced developer knows, and the balance is with pragmatism.
 
-In this simple example the top 5 Twitch Games based on current viewers are listed. 
+The backend service in this case is the Twitch API. Twitch is the world's leading social video platform and community for gamers, video game culture, and the creative arts
+In this simple app the top 5 Twitch Games based on the current number of viewers are listed. 
 Upon selecting one of the games the top 10 streams for that games are listed, also based on the number of viewers.
 
 ### Possible improvements
@@ -19,18 +20,17 @@ The possible improvements to the application are of course many. The most releva
 * Implement gesture detection for manually updating the respective top lists [nice to have]
 * Implement viewing of a selected stream. [nice to have]
 
-
-There are of course many network libraries to choose from. I here selected Retrofit for it's elegance in defining and using backend endpoints.
-Concretely compared to RoboSpice which I've used before, Retrofit is really superior.
+There are of course many network libraries to choose from. I here selected Retrofit for its elegance in defining and using backend endpoints.
+Concretely compared to RoboSpice which I've used alot before, Retrofit truly is superior.
 
 ### Implemented improvements
 
 * Optimized network image loading.
-* Registered the app at Twitch and now sending clientId for eacg request as per their documentation (required from September 2016).
+* Registered the app at Twitch and now sending clientId for each request as per the documentation (required from September 2016).
 
 ### Known issues
 
-* The application is very simple in it's current form, as the possible improvements clearly indicate. 
+* The application is very simple in its current form, as the possible improvements clearly indicate. 
 
 ### Installation
 
