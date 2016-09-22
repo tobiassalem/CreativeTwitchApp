@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.tobiassalem.mytwitchapp.R;
 import com.tobiassalem.mytwitchapp.model.stream.Stream;
 
@@ -44,11 +45,9 @@ public class StreamListAdapater extends BaseAdapter<Stream> {
         if (convertView == null) {
             holder = new ViewHolder();
             rowView = inflater.inflate(LAYOUT_ID, parent, false);
-            //holder.logoWebView = (WebView) rowView.findViewById(R.id.streamLogoWeb);
             holder.logo = (ImageView) rowView.findViewById(R.id.streamLogo);
             holder.title = (TextView) rowView.findViewById(R.id.streamTitle);
             holder.viewerCount = (TextView) rowView.findViewById(R.id.streamViewerCount);
-            optimizeWebView(holder.logoWebView);
 
             rowView.setTag(VIEWHOLDER_UNIQUE_KEY,holder);
         } else {
@@ -70,7 +69,11 @@ public class StreamListAdapater extends BaseAdapter<Stream> {
         holder.viewerCount.setText(viewerCount);
 
         if (hasPreviewImage(stream)) {
-            holder.logoWebView.loadData(ImageHelper.getImageSourceInHtml(stream.getPreview().getSmall()), ImageHelper.MIMETYPE_HTML, ImageHelper.ENCODING_UTF8);
+            String logoUrl = stream.getPreview().getSmall();
+            Glide.with(holder.logo.getContext())
+                    .load(ImageHelper.getUriFromUrl(holder.logo.getContext(), logoUrl, android.R.drawable.star_off))
+                    .fitCenter()
+                    .into(holder.logo);
         }
     }
 

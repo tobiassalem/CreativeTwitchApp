@@ -97,7 +97,6 @@ public class GameListFragment extends BaseFragment implements TopGamesResultList
         public static class ViewHolder extends RecyclerView.ViewHolder {
 
             public final View mView;
-            public final WebView gameLogoWeb;
             public final ImageView gameLogo;
             public final TextView gameTitle;
             public final TextView gameViewerCount;
@@ -105,7 +104,6 @@ public class GameListFragment extends BaseFragment implements TopGamesResultList
             public ViewHolder(View view) {
                 super(view);
                 mView = view;
-                gameLogoWeb = (WebView) view.findViewById(R.id.gameLogoWeb);
                 gameLogo = (ImageView) view.findViewById(R.id.gameLogo);
                 gameTitle = (TextView) view.findViewById(R.id.gameTitle);
                 gameViewerCount = (TextView) view.findViewById(R.id.gameViewerCount);
@@ -145,8 +143,6 @@ public class GameListFragment extends BaseFragment implements TopGamesResultList
             final String gamePreviewUrl = topGame.getGame().getLogo().getSmall();
             final String viewerCount = holder.mView.getContext().getString(R.string.prompt_viewer_count) + " " + String.valueOf(topGame.getViewers());
 
-            //holder.gameLogoWeb.loadUrl(gamePreviewUrl);
-            holder.gameLogoWeb.setVisibility(View.GONE);
             holder.gameTitle.setText(gameTitle);
             holder.gameViewerCount.setText(viewerCount);
 

@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.tobiassalem.mytwitchapp.R;
 import com.tobiassalem.mytwitchapp.model.game.TopGame;
 import com.tobiassalem.mytwitchapp.model.stream.Stream;
@@ -48,10 +49,9 @@ public class GameListAdapater extends BaseAdapter<TopGame> {
         if (convertView == null) {
             holder = new ViewHolder();
             rowView = inflater.inflate(LAYOUT_ID, parent, false);
-            holder.logoWebView = (WebView) rowView.findViewById(R.id.gameLogoWeb);
+            holder.logo = (ImageView) rowView.findViewById(R.id.gameLogo);
             holder.title = (TextView) rowView.findViewById(R.id.gameTitle);
             holder.viewerCount = (TextView) rowView.findViewById(R.id.gameViewerCount);
-            optimizeWebView(holder.logoWebView);
 
             rowView.setTag(VIEWHOLDER_UNIQUE_KEY,holder);
         } else {
@@ -73,7 +73,11 @@ public class GameListAdapater extends BaseAdapter<TopGame> {
         holder.viewerCount.setText(viewerCount);
 
         if (hasPreviewImage(topGame)) {
-            holder.logoWebView.loadData(ImageHelper.getImageSourceInHtml(topGame.getGame().getLogo().getSmall()), ImageHelper.MIMETYPE_HTML, ImageHelper.ENCODING_UTF8);
+            String logoUrl = topGame.getGame().getLogo().getSmall();
+            Glide.with(holder.logo.getContext())
+                    .load(ImageHelper.getUriFromUrl(holder.logo.getContext(), logoUrl, android.R.drawable.star_off))
+                    .fitCenter()
+                    .into(holder.logo);
         }
     }
 

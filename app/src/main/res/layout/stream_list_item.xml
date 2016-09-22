@@ -8,11 +8,10 @@
 
     <ImageView
         android:id="@+id/streamLogo"
-        android:layout_width="@dimen/width_webview_preview_image"
+        android:layout_width="@dimen/width_logo_image"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/margin_horizontal_inside"
-        android:layout_toRightOf="@id/gameLogoWeb"
         android:src="@android:drawable/star_off"
         android:clickable="false"
         android:focusable="false"
