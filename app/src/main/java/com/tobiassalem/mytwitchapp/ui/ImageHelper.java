@@ -1,15 +1,21 @@
 package com.tobiassalem.mytwitchapp.ui;
 
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.support.annotation.AnyRes;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -58,5 +64,48 @@ public class ImageHelper {
     public static String getImageSourceInHtml(final String urlForImage) {
         String imageSourceInHtml = "<html><img src='" + urlForImage + "' /></html>";
         return imageSourceInHtml;
+    }
+
+    /**
+     * Get an Uri object from the given Url path. Typically to be used by an image loading library.
+     * The path is already encoded, for example:
+     * https://static-cdn.jtvnw.net/ttv-logoart/Dota%202-60x36.jpg
+     *
+     * Note that appendPath encodes the slashes in the path to %2F.
+     * Since the path is already encoded, we should use appendEncodedPath.
+     *
+     * @param encodedUrlPath
+     * @return Uri object
+     * @throws MalformedURLException
+     */
+    public static Uri getUriFromUrl(final String encodedUrlPath) throws MalformedURLException {
+
+        URL url = new URL(encodedUrlPath);
+        Uri.Builder builder =  new Uri.Builder()
+                .scheme(url.getProtocol())
+                .authority(url.getAuthority())
+                .appendEncodedPath(encodedUrlPath);
+
+        Uri uri = builder.build();
+        Log.d(TAG, "---> getUriFromUrl: " +encodedUrlPath+ ", Uri: " +uri+ ", url.getProtocol(): " +url.getProtocol()+ ", url.getAuthority(): " +url.getAuthority()+ ", url.getPath(): " +url.getPath());
+
+        return uri;
+    }
+
+    public static Uri getUriFromUrl(@NonNull final Context context, final String thisUrl, @AnyRes int backupDrawableId)  {
+        try {
+            return getUriFromUrl(thisUrl);
+        } catch (MalformedURLException e) {
+            Log.e(TAG, "getUriFromUrl caused exception " +e);
+            return getUriToDrawable(context, backupDrawableId);
+        }
+    }
+
+    public static final Uri getUriToDrawable(@NonNull Context context, @AnyRes int drawableId) {
+        Uri imageUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
+                "://" + context.getResources().getResourcePackageName(drawableId)
+                + '/' + context.getResources().getResourceTypeName(drawableId)
+                + '/' + context.getResources().getResourceEntryName(drawableId) );
+        return imageUri;
     }
 }

@@ -51,7 +51,7 @@ public abstract class BaseAdapter<T> extends ArrayAdapter<T> {
      * Optimize ListView and layout inflation by implementing the simple ViewHolder design pattern
      */
     class ViewHolder {
-        WebView logoWebView;
+        ImageView logo;
         TextView title;
         TextView viewerCount;
     }

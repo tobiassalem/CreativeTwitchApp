@@ -6,14 +6,13 @@
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:padding="@dimen/padding_list_item" >
 
-    <WebView
-        android:id="@+id/gameLogoWeb"
-        android:layout_width="@dimen/width_webview_preview_image"
+    <ImageView
+        android:id="@+id/gameLogo"
+        android:layout_width="@dimen/width_logo_image"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/margin_horizontal_inside"
-        android:clickable="false"
-        android:focusable="false"
+        android:src="@android:drawable/star_off"
         />
 
     <TextView
@@ -22,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/gameLogoWeb"
+        android:layout_toRightOf="@id/gameLogo"
         tools:text="Viewers: 21 337"
         />
 
@@ -32,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/gameViewerCount"
-        android:layout_toRightOf="@id/gameLogoWeb"
+        android:layout_toRightOf="@id/gameLogo"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_alignWithParentIfMissing="true"
