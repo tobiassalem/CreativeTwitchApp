@@ -44,7 +44,8 @@ public class StreamListAdapater extends BaseAdapter<Stream> {
         if (convertView == null) {
             holder = new ViewHolder();
             rowView = inflater.inflate(LAYOUT_ID, parent, false);
-            holder.logoWebView = (WebView) rowView.findViewById(R.id.streamLogoWeb);
+            //holder.logoWebView = (WebView) rowView.findViewById(R.id.streamLogoWeb);
+            holder.logo = (ImageView) rowView.findViewById(R.id.streamLogo);
             holder.title = (TextView) rowView.findViewById(R.id.streamTitle);
             holder.viewerCount = (TextView) rowView.findViewById(R.id.streamViewerCount);
             optimizeWebView(holder.logoWebView);

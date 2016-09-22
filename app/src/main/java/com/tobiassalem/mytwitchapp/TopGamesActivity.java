@@ -128,9 +128,9 @@ public class TopGamesActivity extends BaseActivity implements TopGamesResultList
         return super.onOptionsItemSelected(item);
     }
 
-    /* ========================== [Private help methods] ======================================= */
+    /* ========================== [Helper methods] ======================================= */
 
-    private void logResponse(Response<TopGamesResultModel> response) {
+    private void logResponse(retrofit2.Response<TopGamesResultModel> response) {
         Log.i(LOG_TAG, "---> response: " +response.toString() + ", code: " +response.code()+ ", response.body: " +response.body()+ ", response.message: " +response.message()+ ", errorBody: " +response.errorBody()+
                 ", isSuccessful: " +response.isSuccessful() + ", response.raw: " +response.raw()+ ", " +response.raw());
     }
@@ -140,4 +140,5 @@ public class TopGamesActivity extends BaseActivity implements TopGamesResultList
         String modelInfo = "resultModel.total: " + resultModel.getTotal() + ", topGames.size: " + topGames.size()+ ", links: " +resultModel.getLinks();
         Log.i(LOG_TAG, modelInfo);
     }
+
 }

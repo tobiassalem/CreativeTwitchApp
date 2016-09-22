@@ -5,49 +5,40 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-import com.tobiassalem.mytwitchapp.model.game.TopGame;
-import com.tobiassalem.mytwitchapp.model.game.TopGamesResultModel;
-import com.tobiassalem.mytwitchapp.rest.TwitchApi;
 import com.tobiassalem.mytwitchapp.ui.GameListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 /**
- * Activity for displaying the current top games from the Twitch API - Material Design version
- *
- * @author Tobias
+ * Created by Tobias on 2016-09-13.
  */
-public class TopGamesActivityMaterial extends BaseActivity implements TopGamesResultListener {
+public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         initView();
-        loadGameData();
     }
 
     private void initView() {
-        setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -56,16 +47,21 @@ public class TopGamesActivityMaterial extends BaseActivity implements TopGamesRe
         ab.setDisplayHomeAsUpEnabled(true);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        recyclerView.setAdapter(new GameListFragment.TopGamesAdapter(new ArrayList<TopGame>()));
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         if (navigationView != null) {
             setupDrawerContent(navigationView);
         }
 
+        setupFragments();
         setupFloatingActionButton();
+    }
+
+    private void setupFragments() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.fragmentContainer, new GameListFragment());
+        fragmentTransaction.commit();
     }
 
     private void setupFloatingActionButton() {
@@ -73,27 +69,8 @@ public class TopGamesActivityMaterial extends BaseActivity implements TopGamesRe
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, getResources().getString(R.string.prompt_snackbar_example), Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-            }
-        });
-    }
-
-    private void loadGameData() {
-
-        TwitchApi apiService = buildApiService();
-        Call<TopGamesResultModel> call = apiService.getTopGames(getLimitNrOfGames());
-        call.enqueue(new Callback<TopGamesResultModel>() {
-            @Override
-            public void onResponse(Call<TopGamesResultModel> call, Response<TopGamesResultModel> response) {
-                //logResponse(response);
-                TopGamesResultModel resultModel = response.body();
-                onGameResultSuccess(resultModel);
-            }
-
-            @Override
-            public void onFailure(Call<TopGamesResultModel> call, Throwable t) {
-                onGameResultError();
             }
         });
     }
@@ -165,20 +142,32 @@ public class TopGamesActivityMaterial extends BaseActivity implements TopGamesRe
                 });
     }
 
-    @Override
-    public void onGameResultSuccess(TopGamesResultModel resultModel) {
-        if (resultModel != null) {
-            List<TopGame> topGames = resultModel.getTopGames();
-            ((GameListFragment.TopGamesAdapter) recyclerView.getAdapter()).updateData(topGames);
+    static class Adapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragments = new ArrayList<>();
+        private final List<String> mFragmentTitles = new ArrayList<>();
 
-        } else {
-            Toast.makeText(this, getString(R.string.error_message_data_default), Toast.LENGTH_SHORT).show();
+        public Adapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragments.add(fragment);
+            mFragmentTitles.add(title);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragments.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragments.size();
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitles.get(position);
         }
     }
-
-    @Override
-    public void onGameResultError() {
-        Toast.makeText(this, getString(R.string.error_message_backend_default), Toast.LENGTH_SHORT).show();
-    }
-
 }

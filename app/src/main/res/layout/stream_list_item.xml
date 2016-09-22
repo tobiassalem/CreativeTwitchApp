@@ -6,12 +6,14 @@
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:padding="@dimen/padding_list_item" >
 
-    <WebView
-        android:id="@+id/streamLogoWeb"
+    <ImageView
+        android:id="@+id/streamLogo"
         android:layout_width="@dimen/width_webview_preview_image"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/margin_horizontal_inside"
+        android:layout_toRightOf="@id/gameLogoWeb"
+        android:src="@android:drawable/star_off"
         android:clickable="false"
         android:focusable="false"
         />
@@ -22,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/streamLogoWeb"
+        android:layout_toRightOf="@id/streamLogo"
         tools:text="Viewers: 1337"
          />
 
@@ -32,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/streamViewerCount"
-        android:layout_toRightOf="@id/streamLogoWeb"
+        android:layout_toRightOf="@id/streamLogo"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignWithParentIfMissing="true"

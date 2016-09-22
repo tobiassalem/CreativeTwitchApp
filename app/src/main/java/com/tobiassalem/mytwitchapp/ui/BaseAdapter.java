@@ -52,6 +52,7 @@ public abstract class BaseAdapter<T> extends ArrayAdapter<T> {
      */
     class ViewHolder {
         WebView logoWebView;
+        ImageView logo;
         TextView title;
         TextView viewerCount;
     }
