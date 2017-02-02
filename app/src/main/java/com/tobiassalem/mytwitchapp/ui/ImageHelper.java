@@ -41,7 +41,7 @@ public class ImageHelper {
      */
     public static Drawable getDrawableFromUrl(Resources res, String url) throws IOException {
         Bitmap bitmap;
-        Log.i(TAG, "getDrawableFromUrl: " +url);
+        Log.d(TAG, "getDrawableFromUrl: " +url);
 
         HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
         connection.connect();
@@ -71,7 +71,7 @@ public class ImageHelper {
      * The path is already encoded, for example:
      * https://static-cdn.jtvnw.net/ttv-logoart/Dota%202-60x36.jpg
      *
-     * Note that appendPath encodes the slashes in the path to %2F.
+     * Note that the appendPath method encodes the slashes in the path to %2F.
      * Since the path is already encoded, we should use appendEncodedPath.
      *
      * @param encodedUrlPath
