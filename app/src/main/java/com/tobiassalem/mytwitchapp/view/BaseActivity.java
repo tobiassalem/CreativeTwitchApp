@@ -28,14 +28,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public static final String KEY_GAME_TITLE = "gameTitle";
 
-    protected int getLimitNrOfGames() {
-        return getResources().getInteger(R.integer.defaultTopGamesLimit);
-    }
-
-    protected int getLimitNrOfStreams() {
-        return getResources().getInteger(R.integer.defaultTopStreamsLimit);
-    }
-
     protected TwitchAPIConfig buildTwichAPIConfig() {
         String clientId = getResources().getString(R.string.clientId);
         String serverBaseUrl = getResources().getString(R.string.serverBaseUrl);
