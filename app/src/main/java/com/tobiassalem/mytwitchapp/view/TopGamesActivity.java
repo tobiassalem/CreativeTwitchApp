@@ -1,4 +1,4 @@
-package com.tobiassalem.mytwitchapp;
+package com.tobiassalem.mytwitchapp.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,12 +10,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.tobiassalem.mytwitchapp.R;
+import com.tobiassalem.mytwitchapp.presenter.TopGamesResultListener;
 import com.tobiassalem.mytwitchapp.model.game.TopGame;
 import com.tobiassalem.mytwitchapp.model.game.TopGamesResultModel;
 import com.tobiassalem.mytwitchapp.rest.TwitchApi;
-import com.tobiassalem.mytwitchapp.ui.GameListAdapater;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,14 +22,13 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Activity for displaying the current top games from the Twitch API
  *
  * @author Tobias
  */
+@Deprecated // Not needed with Material Design implementation, replaced with  TopGamesView (implemented by TopGamesFragment)
 public class TopGamesActivity extends BaseActivity implements TopGamesResultListener {
 
     public static final String LOG_TAG = TopGamesActivity.class.getSimpleName();

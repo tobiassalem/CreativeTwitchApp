@@ -19,7 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.tobiassalem.mytwitchapp.ui.GameListFragment;
+import com.tobiassalem.mytwitchapp.view.TopGamesFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupFragments() {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.fragmentContainer, new GameListFragment());
+        fragmentTransaction.add(R.id.fragmentContainer, new TopGamesFragment());
         fragmentTransaction.commit();
     }
 

@@ -1,4 +1,4 @@
-package com.tobiassalem.mytwitchapp.ui;
+package com.tobiassalem.mytwitchapp.view;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -62,8 +62,7 @@ public class ImageHelper {
      * @return
      */
     public static String getImageSourceInHtml(final String urlForImage) {
-        String imageSourceInHtml = "<html><img src='" + urlForImage + "' /></html>";
-        return imageSourceInHtml;
+        return "<html><img src='" + urlForImage + "' /></html>";
     }
 
     /**

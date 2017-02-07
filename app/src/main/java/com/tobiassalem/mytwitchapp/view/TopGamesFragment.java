@@ -1,4 +1,4 @@
-package com.tobiassalem.mytwitchapp.ui;
+package com.tobiassalem.mytwitchapp.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,42 +6,42 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.tobiassalem.mytwitchapp.BaseFragment;
 import com.tobiassalem.mytwitchapp.R;
-import com.tobiassalem.mytwitchapp.TopGamesResultListener;
-import com.tobiassalem.mytwitchapp.TopStreamsActivity;
+import com.tobiassalem.mytwitchapp.presenter.TopGamesPresenter;
+import com.tobiassalem.mytwitchapp.rest.TwitchAPIInteractorImpl;
 import com.tobiassalem.mytwitchapp.model.game.TopGame;
-import com.tobiassalem.mytwitchapp.model.game.TopGamesResultModel;
-import com.tobiassalem.mytwitchapp.rest.TwitchApi;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+/**
+ * Using Android MVP.
+ * Fragment implementation of the TopGamesView.
+ *
+ * @author Tobias
+ */
+public class TopGamesFragment extends BaseFragment implements TopGamesView {
 
-public class GameListFragment extends BaseFragment implements TopGamesResultListener {
-
-    private static final String LOG_TAG = GameListFragment.class.getSimpleName();
+    private static final String LOG_TAG = TopGamesFragment.class.getSimpleName();
     private RecyclerView recyclerView;
+    private TopGamesPresenter presenter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         recyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_game_list, container, false);
         initView();
-        loadGameData();
+
+        presenter = new TopGamesPresenter(this, new TwitchAPIInteractorImpl(buildTwichAPIConfig()));
+        presenter.loadTopGames();
         return recyclerView;
     }
 
@@ -50,45 +50,23 @@ public class GameListFragment extends BaseFragment implements TopGamesResultList
         recyclerView.setAdapter(new TopGamesAdapter(new ArrayList<TopGame>()));
     }
 
-    private void loadGameData() {
-
-        TwitchApi apiService = buildApiService();
-        Call<TopGamesResultModel> call = apiService.getTopGames(getLimitNrOfGames());
-        call.enqueue(new Callback<TopGamesResultModel>() {
-            @Override
-            public void onResponse(Call<TopGamesResultModel> call, Response<TopGamesResultModel> response) {
-                //logResponse(response);
-                TopGamesResultModel resultModel = response.body();
-                onGameResultSuccess(resultModel);
-            }
-
-            @Override
-            public void onFailure(Call<TopGamesResultModel> call, Throwable t) {
-                onGameResultError();
-            }
-        });
-    }
+    /* ========================== [View interface methods] ======================================= */
 
     @Override
-    public void onGameResultSuccess(TopGamesResultModel resultModel) {
-        if (resultModel != null) {
-            List<TopGame> topGames = resultModel.getTopGames();
-            logResultModel(resultModel);
-
-            // RecyclerView version
-            recyclerView.removeAllViews();
-            ((TopGamesAdapter) recyclerView.getAdapter()).updateData(topGames);
-
-        } else {
-            Log.e(LOG_TAG, "resultModel: " +resultModel);
-            Toast.makeText(getActivity(), getString(R.string.error_message_data_default), Toast.LENGTH_SHORT).show();
-        }
+    public void setTopGames(List<TopGame> topGames) {
+        recyclerView.removeAllViews();
+        ((TopGamesAdapter) recyclerView.getAdapter()).updateData(topGames);
     }
 
-    @Override
-    public void onGameResultError() {
-        Toast.makeText(getActivity(), getString(R.string.error_message_backend_default), Toast.LENGTH_SHORT).show();
+    public void onGamesResultError() {
+        Toast.makeText(this.getContext(), getString(R.string.error_message_backend_default), Toast.LENGTH_SHORT).show();
     }
+
+    public void onGamesResultMissing() {
+        Toast.makeText(this.getContext(), getString(R.string.error_message_data_default), Toast.LENGTH_SHORT).show();
+    }
+
+    /* ========================== [View implementations] ======================================= */
 
     public static class TopGamesAdapter extends RecyclerView.Adapter<TopGamesAdapter.ViewHolder> {
 
@@ -168,11 +146,5 @@ public class GameListFragment extends BaseFragment implements TopGamesResultList
             return topGames.size();
         }
     }
-
-    private void logResultModel(TopGamesResultModel resultModel) {
-        List<TopGame> topGames = resultModel.getTopGames();
-        String modelInfo = "resultModel.total: " + resultModel.getTotal() + ", topGames.size: " + topGames.size()+ ", links: " +resultModel.getLinks();
-        Log.i(LOG_TAG, modelInfo);
-    }    
 
 }

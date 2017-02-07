@@ -1,23 +1,17 @@
-package com.tobiassalem.mytwitchapp.ui;
+package com.tobiassalem.mytwitchapp.view;
 
 import android.content.Context;
-import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.tobiassalem.mytwitchapp.R;
 import com.tobiassalem.mytwitchapp.model.game.TopGame;
-import com.tobiassalem.mytwitchapp.model.stream.Stream;
 
-import java.text.DecimalFormat;
 import java.util.List;
 
 /**

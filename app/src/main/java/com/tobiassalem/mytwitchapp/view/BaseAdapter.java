@@ -1,8 +1,7 @@
-package com.tobiassalem.mytwitchapp.ui;
+package com.tobiassalem.mytwitchapp.view;
 
 import android.content.Context;
 import android.os.Build;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;

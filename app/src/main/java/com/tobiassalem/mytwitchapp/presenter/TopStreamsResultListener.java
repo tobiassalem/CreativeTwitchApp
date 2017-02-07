@@ -1,10 +1,11 @@
-package com.tobiassalem.mytwitchapp;
+package com.tobiassalem.mytwitchapp.presenter;
 
 import com.tobiassalem.mytwitchapp.model.stream.TopStreamsResultModel;
 
 
 /**
- * Interface to be implmented by classes listening to top stream results
+ * Interface to be implemented by classes listening to top stream results.
+ * Normally with the Android MVP design, this is the Presenter.
  *
  * @author Tobias
  */

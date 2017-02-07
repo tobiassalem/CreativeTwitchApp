@@ -11,7 +11,7 @@ Upon selecting one of the games the top 10 streams for that games are listed, al
 The possible improvements to the application are of course many. The most relevant can easily be the following.
 
 * Implement instrumentation and unit tests. Especially for the JSON deserialization. [must have]
-* Convert all async calls with callback hook methods to AsyncTasks for clarity. [nice to have]
+* Implement Android MVP (Model View Presenter) pattern for architectural clarity. [must have]
 * Convert the project to use Material Design best practices (e.g. RecycleView instead of ListView). [nice to have]
 * Implement support for more devices and screen resolutions (e.g. use Fragments and more image dpi versions). [must have]
 * Implement smarter caching for the game and stream images (at the moment WebView's out-of-the-box caching is used). [must have]
@@ -38,3 +38,27 @@ Import the Gradle aware project into Android Studio and run with your favorite e
 * Gradle build tool - @See https://gradle.org/
 * Retrofit network library. - @See http://square.github.io/retrofit/
 * Clean Code by Robert C. Martin - @See https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
+
+
+### Work in progress
+* Android MVP and Material Design
+* Classes about to be deprecated (since they are no longer needed)
+    * TopGamesActivityMaterial - original paralell implemententation of material design (logic now in GameListFragment)
+    * TopGamesActivity - original implementation of main activity.
+    We now have MainActivity which does app setup and performs no logic on it's own. It adds GameListFragment.
+    * BaseActivity - with the classes above gone, there is no need for this one either.
+* GameListFragment could also be named TopGamesFragment (not decided yet).
+* With Android MVP both TopGamesActivity and TopGamesFragment would implement TopGamesView
+
+* With Android MVP we have
+    * TwitchAPIInteractor which connects to the actual TwitchAPI (logic previously in BaseActivity and BaseFragment ends up here)
+    * TopGamesView - implemented by TopGamesFragment
+    * TopGamesPresenter - managing all listeners and callback hook methods
+
+* Android MVP structure
+    * The View (Activity / Fragment) creates the Presenter, optionally with the interactor in the constructor.
+    * The Interactor is the only one making API calls to the backend API.
+    * The Presenter handles all callback and listener logic.
+    * The Presenter calls the direct view update methods.
+    * The View only accepts data and updates its view / UI components accordingly.
+    * Backend API ----> Interactor ----> Presenter ---> View

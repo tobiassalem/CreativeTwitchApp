@@ -21,23 +21,18 @@
             </intent-filter>
         </activity>
 
-        <activity
+        <!-- activity
             android:name=".TopGamesActivity"
             android:label="@string/title_top_games"
             android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+        </activity -->
 
         <activity
-            android:name=".TopStreamsActivity"
+            android:name=".view.TopStreamsActivity"
             android:label="@string/title_top_streams"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
 
-        <activity
-            android:name=".TopGamesActivityMaterial"
-            android:label="@string/title_top_games"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
     </application>
 
 </manifest>

@@ -1,52 +1,45 @@
-package com.tobiassalem.mytwitchapp;
+package com.tobiassalem.mytwitchapp.view;
 
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.tobiassalem.mytwitchapp.R;
+import com.tobiassalem.mytwitchapp.presenter.TopStreamsPresenter;
 import com.tobiassalem.mytwitchapp.model.stream.Stream;
-import com.tobiassalem.mytwitchapp.model.stream.TopStreamsResultModel;
-import com.tobiassalem.mytwitchapp.rest.TwitchApi;
-import com.tobiassalem.mytwitchapp.ui.ImageHelper;
-import com.tobiassalem.mytwitchapp.ui.StreamListAdapater;
+import com.tobiassalem.mytwitchapp.rest.TwitchAPIInteractorImpl;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Activity for displaying the current top streams for a given game from the Twitch API
  *
  * @author Tobias
  */
-public class TopStreamsActivity extends BaseActivity implements TopStreamsResultListener {
-
-    private static final String TAG = TopStreamsActivity.class.getSimpleName();
+public class TopStreamsActivity extends BaseActivity implements TopStreamsView {
 
     private RecyclerView recyclerView;
     private String gameTitle = "";
+    private TopStreamsPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         readGameTitle();
         initView();
-        loadStreamData();
+        presenter = new TopStreamsPresenter(this, new TwitchAPIInteractorImpl(buildTwichAPIConfig()));
+        presenter.loadTopStreams(gameTitle);
     }
 
     private void readGameTitle() {
@@ -72,25 +65,6 @@ public class TopStreamsActivity extends BaseActivity implements TopStreamsResult
         recyclerView.setAdapter(new TopStreamsAdapter(new ArrayList<Stream>()));
     }
 
-    private void loadStreamData() {
-
-        TwitchApi apiService = buildApiService();
-        Call<TopStreamsResultModel> call = apiService.getTopStreamsForGame(gameTitle, getLimitNrOfStreams());
-        call.enqueue(new Callback<TopStreamsResultModel>() {
-            @Override
-            public void onResponse(Call<TopStreamsResultModel> call, Response<TopStreamsResultModel> response) {
-                logResponse(response);
-                TopStreamsResultModel resultModel = response.body();
-                onStreamResultSuccess(resultModel);
-            }
-
-            @Override
-            public void onFailure(Call<TopStreamsResultModel> call, Throwable t) {
-                onStreamResultError();
-            }
-        });
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
@@ -101,38 +75,21 @@ public class TopStreamsActivity extends BaseActivity implements TopStreamsResult
         return super.onOptionsItemSelected(item);
     }
 
-    /* ========================== [Callback methods] ======================================= */
+    /* ========================== [View interface methods] ======================================= */
 
-    @Override
-    public void onStreamResultSuccess(TopStreamsResultModel resultModel) {
-        if (resultModel != null) {
-            List<Stream> streams = resultModel.getStreams();
-            logResultModel(resultModel);
-
-            ((TopStreamsAdapter) recyclerView.getAdapter()).updateData(streams);
-
-        } else {
-            Toast.makeText(TopStreamsActivity.this, getString(R.string.error_message_data_default), Toast.LENGTH_SHORT).show();
-        }
+    public void setTopStreams(List<Stream> streams) {
+        ((TopStreamsAdapter) recyclerView.getAdapter()).updateData(streams);
     }
 
-    @Override
     public void onStreamResultError() {
         Toast.makeText(TopStreamsActivity.this, getString(R.string.error_message_backend_default), Toast.LENGTH_SHORT).show();
     }
 
-    /* ========================== [Private help methods] ======================================= */
-
-    private void logResponse(Response<TopStreamsResultModel> response) {
-        Log.i(TAG, "---> response: " +response.toString() + ", code: " +response.code()+ ", response.body: " +response.body()+ ", response.message: " +response.message()+ ", errorBody: " +response.errorBody()+
-                ", isSuccessful: " +response.isSuccessful() + ", response.raw: " +response.raw()+ ", " +response.raw());
+    public void onStreamResultMissing() {
+        Toast.makeText(TopStreamsActivity.this, getString(R.string.error_message_data_default), Toast.LENGTH_SHORT).show();
     }
 
-    private void logResultModel(TopStreamsResultModel resultModel) {
-        List<Stream> streams = resultModel.getStreams();
-        String modelInfo = "resultModel.total: " + resultModel.getTotal() + ", streams.size: " + streams.size()+ ", links: " +resultModel.getLinks();
-        Log.i(TAG, modelInfo);
-    }
+    /* ========================== [View implementation] ======================================= */
 
     private class TopStreamsAdapter extends RecyclerView.Adapter<TopStreamsAdapter.ViewHolder> {
         private List<Stream> streams;

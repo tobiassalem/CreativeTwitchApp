@@ -1,10 +1,11 @@
-package com.tobiassalem.mytwitchapp;
+package com.tobiassalem.mytwitchapp.view;
 
 import android.support.v4.app.Fragment;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.tobiassalem.mytwitchapp.R;
+import com.tobiassalem.mytwitchapp.rest.TwitchAPIConfig;
 import com.tobiassalem.mytwitchapp.rest.TwitchApi;
 
 import java.io.IOException;
@@ -18,19 +19,20 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Abstract base activity for all shared data and logic.
+ * Abstract base fragment for all shared data and logic.
  *
  * @author Tobias
  */
 public abstract class BaseFragment extends Fragment {
 
 
-    protected int getLimitNrOfGames() {
-        return getResources().getInteger(R.integer.defaultTopGamesLimit);
-    }
+    protected TwitchAPIConfig buildTwichAPIConfig() {
+        String clientId = getResources().getString(R.string.clientId);
+        String serverBaseUrl = getResources().getString(R.string.serverBaseUrl);
+        int limitNrOfGames = getResources().getInteger(R.integer.defaultTopGamesLimit);
+        int lmitNrOfStreams = getResources().getInteger(R.integer.defaultTopStreamsLimit);
 
-    protected int getLimitNrOfStreams() {
-        return getResources().getInteger(R.integer.defaultTopStreamsLimit);
+        return new TwitchAPIConfig(clientId, serverBaseUrl, limitNrOfGames, lmitNrOfStreams);
     }
 
     /**

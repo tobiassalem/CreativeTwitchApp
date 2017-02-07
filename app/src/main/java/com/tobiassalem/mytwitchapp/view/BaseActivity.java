@@ -1,18 +1,15 @@
-package com.tobiassalem.mytwitchapp;
+package com.tobiassalem.mytwitchapp.view;
 
-import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.tobiassalem.mytwitchapp.model.game.TopGame;
-import com.tobiassalem.mytwitchapp.model.game.TopGamesResultModel;
+import com.tobiassalem.mytwitchapp.R;
+import com.tobiassalem.mytwitchapp.rest.TwitchAPIConfig;
 import com.tobiassalem.mytwitchapp.rest.TwitchApi;
 
 import java.io.IOException;
-import java.util.List;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -23,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Abstract base activity for all shared data and logic.
- * If we want to use Material Design with DrawerLayout, we need to extend AppCompatActivity (instead of Activity).
+ * When using Material Design with DrawerLayout, we need to extend AppCompatActivity (instead of Activity).
  *
  * @author Tobias
  */
@@ -37,6 +34,15 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected int getLimitNrOfStreams() {
         return getResources().getInteger(R.integer.defaultTopStreamsLimit);
+    }
+
+    protected TwitchAPIConfig buildTwichAPIConfig() {
+        String clientId = getResources().getString(R.string.clientId);
+        String serverBaseUrl = getResources().getString(R.string.serverBaseUrl);
+        int limitNrOfGames = getResources().getInteger(R.integer.defaultTopGamesLimit);
+        int lmitNrOfStreams = getResources().getInteger(R.integer.defaultTopStreamsLimit);
+
+        return new TwitchAPIConfig(clientId, serverBaseUrl, limitNrOfGames, lmitNrOfStreams);
     }
 
     protected TwitchApi buildApiService() {
