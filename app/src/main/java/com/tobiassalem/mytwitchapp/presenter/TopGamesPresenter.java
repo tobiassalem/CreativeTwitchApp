@@ -1,11 +1,12 @@
 package com.tobiassalem.mytwitchapp.presenter;
 
-import android.util.Log;
-
 import com.tobiassalem.mytwitchapp.rest.TwitchAPIInteractor;
 import com.tobiassalem.mytwitchapp.model.game.TopGame;
 import com.tobiassalem.mytwitchapp.model.game.TopGamesResultModel;
 import com.tobiassalem.mytwitchapp.view.TopGamesView;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -18,6 +19,8 @@ import java.util.List;
  * @author Tobias
  */
 public class TopGamesPresenter implements TopGamesResultListener {
+
+    private final Logger logger = LoggerFactory.getLogger(TopGamesPresenter.class);
 
     private static final String LOG_TAG = TopGamesPresenter.class.getSimpleName();
 
@@ -35,24 +38,27 @@ public class TopGamesPresenter implements TopGamesResultListener {
 
     @Override
     public void onGameResultSuccess(TopGamesResultModel resultModel) {
-        if (resultModel != null) {
+        if (resultModel != null && resultModel.getTopGames() != null && resultModel.getTopGames().size() > 0) {
             List<TopGame> topGames = resultModel.getTopGames();
             logResultModel(resultModel);
             view.setTopGames(topGames);
 
         } else {
-            Log.e(LOG_TAG, "resultModel: " +resultModel);
+            view.onGamesResultMissing();
+            logger.error("resultModel: " +resultModel);
+            //Log.e(LOG_TAG, "resultModel: " +resultModel);
         }
     }
 
     @Override
     public void onGameResultError() {
-
+        view.onGamesResultError();
     }
 
     private void logResultModel(TopGamesResultModel resultModel) {
         List<TopGame> topGames = resultModel.getTopGames();
         String modelInfo = "resultModel.total: " + resultModel.getTotal() + ", topGames.size: " + topGames.size()+ ", links: " +resultModel.getLinks();
-        Log.i(LOG_TAG, modelInfo);
+        logger.info(modelInfo);
+        //Log.i(LOG_TAG, modelInfo);
     }
 }

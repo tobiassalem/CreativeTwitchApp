@@ -9,6 +9,9 @@ import com.tobiassalem.mytwitchapp.model.stream.Stream;
 import com.tobiassalem.mytwitchapp.model.stream.TopStreamsResultModel;
 import com.tobiassalem.mytwitchapp.view.TopStreamsView;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 
 /**
@@ -21,7 +24,9 @@ import java.util.List;
  */
 public class TopStreamsPresenter implements TopStreamsResultListener {
 
-    private static final String LOG_TAG = TopStreamsPresenter.class.getSimpleName();
+    private final Logger logger = LoggerFactory.getLogger(TopGamesPresenter.class);
+
+    //private static final String LOG_TAG = TopStreamsPresenter.class.getSimpleName();
 
     private final TopStreamsView view;
     private final TwitchAPIInteractor interactor;
@@ -39,7 +44,7 @@ public class TopStreamsPresenter implements TopStreamsResultListener {
 
     @Override
     public void onStreamResultSuccess(TopStreamsResultModel resultModel) {
-        if (resultModel != null) {
+        if (resultModel != null && resultModel.getStreams() != null && resultModel.getStreams().size() > 0) {
             List<Stream> streams = resultModel.getStreams();
             logResultModel(resultModel);
             view.setTopStreams(streams);
@@ -60,13 +65,15 @@ public class TopStreamsPresenter implements TopStreamsResultListener {
     private void logResultModel(TopGamesResultModel resultModel) {
         List<TopGame> topGames = resultModel.getTopGames();
         String modelInfo = "resultModel.total: " + resultModel.getTotal() + ", topGames.size: " + topGames.size()+ ", links: " +resultModel.getLinks();
-        Log.i(LOG_TAG, modelInfo);
+        logger.info(modelInfo);
+        //Log.i(LOG_TAG, modelInfo);
     }
 
     private void logResultModel(TopStreamsResultModel resultModel) {
         List<Stream> streams = resultModel.getStreams();
         String modelInfo = "resultModel.total: " + resultModel.getTotal() + ", streams.size: " + streams.size()+ ", links: " +resultModel.getLinks();
-        Log.i(LOG_TAG, modelInfo);
+        logger.info(modelInfo);
+        //Log.i(LOG_TAG, modelInfo);
     }
 
 }
