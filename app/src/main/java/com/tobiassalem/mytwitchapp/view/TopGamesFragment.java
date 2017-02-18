@@ -37,7 +37,7 @@ public class TopGamesFragment extends BaseFragment implements TopGamesView {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        recyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_game_list, container, false);
+        recyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_top_games, container, false);
         initView();
 
         presenter = new TopGamesPresenter(this, new TwitchAPIInteractorImpl(buildTwichAPIConfig()));

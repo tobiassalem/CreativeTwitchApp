@@ -1,0 +1,239 @@
+{
+  "_total": 900,
+  "_links": {
+    "self": "https://api.twitch.tv/kraken/games/top?limit=10",
+    "next": "https://api.twitch.tv/kraken/games/top?limit=10&offset=10"
+  },
+  "top": [
+    {
+      "game": {
+        "name": "League of Legends",
+        "popularity": 78907,
+        "_id": 21779,
+        "giantbomb_id": 24024,
+        "box": {
+          "large": "https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-272x380.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-136x190.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-52x72.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-{width}x{height}.jpg"
+        },
+        "logo": {
+          "large": "https://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends-240x144.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends-120x72.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends-60x36.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends-{width}x{height}.jpg"
+        },
+        "_links": {}
+      },
+      "viewers": 79420,
+      "channels": 1051
+    },
+    {
+      "game": {
+        "name": "Hearthstone",
+        "popularity": 37204,
+        "_id": 138585,
+        "giantbomb_id": 42033,
+        "box": {
+          "large": "https://static-cdn.jtvnw.net/ttv-boxart/Hearthstone-272x380.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-boxart/Hearthstone-136x190.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-boxart/Hearthstone-52x72.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-boxart/Hearthstone-{width}x{height}.jpg"
+        },
+        "logo": {
+          "large": "https://static-cdn.jtvnw.net/ttv-logoart/Hearthstone-240x144.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-logoart/Hearthstone-120x72.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-logoart/Hearthstone-60x36.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-logoart/Hearthstone-{width}x{height}.jpg"
+        },
+        "_links": {}
+      },
+      "viewers": 37350,
+      "channels": 163
+    },
+    {
+      "game": {
+        "name": "Nioh",
+        "popularity": 37466,
+        "_id": 24872,
+        "giantbomb_id": 27578,
+        "box": {
+          "large": "https://static-cdn.jtvnw.net/ttv-boxart/Nioh-272x380.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-boxart/Nioh-136x190.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-boxart/Nioh-52x72.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-boxart/Nioh-{width}x{height}.jpg"
+        },
+        "logo": {
+          "large": "https://static-cdn.jtvnw.net/ttv-logoart/Nioh-240x144.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-logoart/Nioh-120x72.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-logoart/Nioh-60x36.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-logoart/Nioh-{width}x{height}.jpg"
+        },
+        "_links": {}
+      },
+      "viewers": 36983,
+      "channels": 404
+    },
+    {
+      "game": {
+        "name": "Dota 2",
+        "popularity": 25855,
+        "_id": 29595,
+        "giantbomb_id": 32887,
+        "box": {
+          "large": "https://static-cdn.jtvnw.net/ttv-boxart/Dota%202-272x380.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-boxart/Dota%202-136x190.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-boxart/Dota%202-52x72.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-boxart/Dota%202-{width}x{height}.jpg"
+        },
+        "logo": {
+          "large": "https://static-cdn.jtvnw.net/ttv-logoart/Dota%202-240x144.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-logoart/Dota%202-120x72.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-logoart/Dota%202-60x36.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-logoart/Dota%202-{width}x{height}.jpg"
+        },
+        "_links": {}
+      },
+      "viewers": 25913,
+      "channels": 352
+    },
+    {
+      "game": {
+        "name": "Counter-Strike: Global Offensive",
+        "popularity": 21387,
+        "_id": 32399,
+        "giantbomb_id": 36113,
+        "box": {
+          "large": "https://static-cdn.jtvnw.net/ttv-boxart/Counter-Strike:%20Global%20Offensive-272x380.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-boxart/Counter-Strike:%20Global%20Offensive-136x190.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-boxart/Counter-Strike:%20Global%20Offensive-52x72.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-boxart/Counter-Strike:%20Global%20Offensive-{width}x{height}.jpg"
+        },
+        "logo": {
+          "large": "https://static-cdn.jtvnw.net/ttv-logoart/Counter-Strike:%20Global%20Offensive-240x144.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-logoart/Counter-Strike:%20Global%20Offensive-120x72.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-logoart/Counter-Strike:%20Global%20Offensive-60x36.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-logoart/Counter-Strike:%20Global%20Offensive-{width}x{height}.jpg"
+        },
+        "_links": {}
+      },
+      "viewers": 21444,
+      "channels": 463
+    },
+    {
+      "game": {
+        "name": "For Honor",
+        "popularity": 20043,
+        "_id": 490382,
+        "giantbomb_id": 49967,
+        "box": {
+          "large": "https://static-cdn.jtvnw.net/ttv-boxart/For%20Honor-272x380.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-boxart/For%20Honor-136x190.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-boxart/For%20Honor-52x72.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-boxart/For%20Honor-{width}x{height}.jpg"
+        },
+        "logo": {
+          "large": "https://static-cdn.jtvnw.net/ttv-logoart/For%20Honor-240x144.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-logoart/For%20Honor-120x72.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-logoart/For%20Honor-60x36.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-logoart/For%20Honor-{width}x{height}.jpg"
+        },
+        "_links": {}
+      },
+      "viewers": 20603,
+      "channels": 308
+    },
+    {
+      "game": {
+        "name": "Overwatch",
+        "popularity": 18653,
+        "_id": 488552,
+        "giantbomb_id": 48190,
+        "box": {
+          "large": "https://static-cdn.jtvnw.net/ttv-boxart/Overwatch-272x380.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-boxart/Overwatch-136x190.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-boxart/Overwatch-52x72.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-boxart/Overwatch-{width}x{height}.jpg"
+        },
+        "logo": {
+          "large": "https://static-cdn.jtvnw.net/ttv-logoart/Overwatch-240x144.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-logoart/Overwatch-120x72.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-logoart/Overwatch-60x36.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-logoart/Overwatch-{width}x{height}.jpg"
+        },
+        "_links": {}
+      },
+      "viewers": 19148,
+      "channels": 660
+    },
+    {
+      "game": {
+        "name": "World of Warcraft",
+        "popularity": 15146,
+        "_id": 18122,
+        "giantbomb_id": 19783,
+        "box": {
+          "large": "https://static-cdn.jtvnw.net/ttv-boxart/World%20of%20Warcraft-272x380.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-boxart/World%20of%20Warcraft-136x190.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-boxart/World%20of%20Warcraft-52x72.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-boxart/World%20of%20Warcraft-{width}x{height}.jpg"
+        },
+        "logo": {
+          "large": "https://static-cdn.jtvnw.net/ttv-logoart/World%20of%20Warcraft-240x144.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-logoart/World%20of%20Warcraft-120x72.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-logoart/World%20of%20Warcraft-60x36.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-logoart/World%20of%20Warcraft-{width}x{height}.jpg"
+        },
+        "_links": {}
+      },
+      "viewers": 15208,
+      "channels": 315
+    },
+    {
+      "game": {
+        "name": "H1Z1: King of the Kill",
+        "popularity": 13990,
+        "_id": 417892,
+        "giantbomb_id": 52692,
+        "box": {
+          "large": "https://static-cdn.jtvnw.net/ttv-boxart/H1Z1:%20King%20of%20the%20Kill-272x380.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-boxart/H1Z1:%20King%20of%20the%20Kill-136x190.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-boxart/H1Z1:%20King%20of%20the%20Kill-52x72.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-boxart/H1Z1:%20King%20of%20the%20Kill-{width}x{height}.jpg"
+        },
+        "logo": {
+          "large": "https://static-cdn.jtvnw.net/ttv-logoart/H1Z1:%20King%20of%20the%20Kill-240x144.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-logoart/H1Z1:%20King%20of%20the%20Kill-120x72.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-logoart/H1Z1:%20King%20of%20the%20Kill-60x36.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-logoart/H1Z1:%20King%20of%20the%20Kill-{width}x{height}.jpg"
+        },
+        "_links": {}
+      },
+      "viewers": 14023,
+      "channels": 424
+    },
+    {
+      "game": {
+        "name": "Heroes of the Storm",
+        "popularity": 13662,
+        "_id": 32959,
+        "giantbomb_id": 36739,
+        "box": {
+          "large": "https://static-cdn.jtvnw.net/ttv-boxart/Heroes%20of%20the%20Storm-272x380.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-boxart/Heroes%20of%20the%20Storm-136x190.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-boxart/Heroes%20of%20the%20Storm-52x72.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-boxart/Heroes%20of%20the%20Storm-{width}x{height}.jpg"
+        },
+        "logo": {
+          "large": "https://static-cdn.jtvnw.net/ttv-logoart/Heroes%20of%20the%20Storm-240x144.jpg",
+          "medium": "https://static-cdn.jtvnw.net/ttv-logoart/Heroes%20of%20the%20Storm-120x72.jpg",
+          "small": "https://static-cdn.jtvnw.net/ttv-logoart/Heroes%20of%20the%20Storm-60x36.jpg",
+          "template": "https://static-cdn.jtvnw.net/ttv-logoart/Heroes%20of%20the%20Storm-{width}x{height}.jpg"
+        },
+        "_links": {}
+      },
+      "viewers": 13869,
+      "channels": 103
+    }
+  ]
+}

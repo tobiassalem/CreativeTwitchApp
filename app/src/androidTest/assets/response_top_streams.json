@@ -1,0 +1,282 @@
+{
+  "_total": 160,
+  "streams": [
+    {
+      "_id": 24483400304,
+      "game": "Hearthstone",
+      "viewers": 9190,
+      "video_height": 1080,
+      "average_fps": 60,
+      "delay": 0,
+      "created_at": "2017-02-10T06:41:55Z",
+      "is_playlist": false,
+      "preview": {
+        "small": "https://static-cdn.jtvnw.net/previews-ttv/live_user_p4wnyhof-80x45.jpg",
+        "medium": "https://static-cdn.jtvnw.net/previews-ttv/live_user_p4wnyhof-320x180.jpg",
+        "large": "https://static-cdn.jtvnw.net/previews-ttv/live_user_p4wnyhof-640x360.jpg",
+        "template": "https://static-cdn.jtvnw.net/previews-ttv/live_user_p4wnyhof-{width}x{height}.jpg"
+      },
+      "channel": {
+        "mature": false,
+        "partner": true,
+        "status": "YOGG IS BACK! - Later For Honor PokeGirl - February Giveaway: p4wnyhof.de/giveaway",
+        "broadcaster_language": "en",
+        "display_name": "P4wnyhof",
+        "game": "Hearthstone",
+        "language": "en",
+        "_id": 71672341,
+        "name": "p4wnyhof",
+        "created_at": "2014-09-21T15:03:12Z",
+        "updated_at": "2017-02-10T09:33:21Z",
+        "delay": null,
+        "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/p4wnyhof-profile_image-b30742b7cdd4c4d0-300x300.jpeg",
+        "banner": null,
+        "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/p4wnyhof-channel_offline_image-5d61ca5f4240e2d8-1920x1080.jpeg",
+        "background": null,
+        "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/p4wnyhof-profile_banner-17f763bf1e306843-480.png",
+        "profile_banner_background_color": null,
+        "url": "https://www.twitch.tv/p4wnyhof",
+        "views": 17655612,
+        "followers": 221707,
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/channels/p4wnyhof",
+          "follows": "https://api.twitch.tv/kraken/channels/p4wnyhof/follows",
+          "commercial": "https://api.twitch.tv/kraken/channels/p4wnyhof/commercial",
+          "stream_key": "https://api.twitch.tv/kraken/channels/p4wnyhof/stream_key",
+          "chat": "https://api.twitch.tv/kraken/chat/p4wnyhof",
+          "features": "https://api.twitch.tv/kraken/channels/p4wnyhof/features",
+          "subscriptions": "https://api.twitch.tv/kraken/channels/p4wnyhof/subscriptions",
+          "editors": "https://api.twitch.tv/kraken/channels/p4wnyhof/editors",
+          "teams": "https://api.twitch.tv/kraken/channels/p4wnyhof/teams",
+          "videos": "https://api.twitch.tv/kraken/channels/p4wnyhof/videos"
+        }
+      },
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/streams/p4wnyhof"
+      }
+    },
+    {
+      "_id": 24483855120,
+      "game": "Hearthstone",
+      "viewers": 5070,
+      "video_height": 1080,
+      "average_fps": 60.480932718,
+      "delay": 0,
+      "created_at": "2017-02-10T08:45:25Z",
+      "is_playlist": false,
+      "preview": {
+        "small": "https://static-cdn.jtvnw.net/previews-ttv/live_user_teaminven-80x45.jpg",
+        "medium": "https://static-cdn.jtvnw.net/previews-ttv/live_user_teaminven-320x180.jpg",
+        "large": "https://static-cdn.jtvnw.net/previews-ttv/live_user_teaminven-640x360.jpg",
+        "template": "https://static-cdn.jtvnw.net/previews-ttv/live_user_teaminven-{width}x{height}.jpg"
+      },
+      "channel": {
+        "mature": false,
+        "partner": true,
+        "status": "[인벤] HCC ALLSTAR 조추첨식 with 따효니,룩삼,플러리,크라니쉬,슬시호,김영일",
+        "broadcaster_language": "ko",
+        "display_name": "teaminven",
+        "game": "Hearthstone",
+        "language": "ko",
+        "_id": 79946736,
+        "name": "teaminven",
+        "created_at": "2015-01-16T11:01:36Z",
+        "updated_at": "2017-02-10T09:33:22Z",
+        "delay": null,
+        "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/teaminven-profile_image-afe1956a8b55510a-300x300.jpeg",
+        "banner": null,
+        "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/teaminven-channel_offline_image-202b1ba0e55388e2-1920x1080.png",
+        "background": null,
+        "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/teaminven-profile_banner-0e6c5fcedfe278bc-480.png",
+        "profile_banner_background_color": null,
+        "url": "https://www.twitch.tv/teaminven",
+        "views": 3536405,
+        "followers": 44714,
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/channels/teaminven",
+          "follows": "https://api.twitch.tv/kraken/channels/teaminven/follows",
+          "commercial": "https://api.twitch.tv/kraken/channels/teaminven/commercial",
+          "stream_key": "https://api.twitch.tv/kraken/channels/teaminven/stream_key",
+          "chat": "https://api.twitch.tv/kraken/chat/teaminven",
+          "features": "https://api.twitch.tv/kraken/channels/teaminven/features",
+          "subscriptions": "https://api.twitch.tv/kraken/channels/teaminven/subscriptions",
+          "editors": "https://api.twitch.tv/kraken/channels/teaminven/editors",
+          "teams": "https://api.twitch.tv/kraken/channels/teaminven/teams",
+          "videos": "https://api.twitch.tv/kraken/channels/teaminven/videos"
+        }
+      },
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/streams/teaminven"
+      }
+    },
+    {
+      "_id": 24483490880,
+      "game": "Hearthstone",
+      "viewers": 4339,
+      "video_height": 1080,
+      "average_fps": 30.0031918289,
+      "delay": 0,
+      "created_at": "2017-02-10T07:06:21Z",
+      "is_playlist": false,
+      "preview": {
+        "small": "https://static-cdn.jtvnw.net/previews-ttv/live_user_lenagol0vach-80x45.jpg",
+        "medium": "https://static-cdn.jtvnw.net/previews-ttv/live_user_lenagol0vach-320x180.jpg",
+        "large": "https://static-cdn.jtvnw.net/previews-ttv/live_user_lenagol0vach-640x360.jpg",
+        "template": "https://static-cdn.jtvnw.net/previews-ttv/live_user_lenagol0vach-{width}x{height}.jpg"
+      },
+      "channel": {
+        "mature": false,
+        "partner": true,
+        "status": " LEGEND Ladder (Лютый)",
+        "broadcaster_language": "ru",
+        "display_name": "LenaGol0vach",
+        "game": "Hearthstone",
+        "language": "ru",
+        "_id": 87186401,
+        "name": "lenagol0vach",
+        "created_at": "2015-04-01T19:47:49Z",
+        "updated_at": "2017-02-10T09:33:12Z",
+        "delay": null,
+        "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/lenagol0vach-profile_image-c2f1c1192fe3a731-300x300.jpeg",
+        "banner": null,
+        "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/lenagol0vach-channel_offline_image-9644056470acb22d-1920x1080.jpeg",
+        "background": null,
+        "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/lenagol0vach-profile_banner-aa9383f44149cdd0-480.png",
+        "profile_banner_background_color": null,
+        "url": "https://www.twitch.tv/lenagol0vach",
+        "views": 5928591,
+        "followers": 86360,
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/channels/lenagol0vach",
+          "follows": "https://api.twitch.tv/kraken/channels/lenagol0vach/follows",
+          "commercial": "https://api.twitch.tv/kraken/channels/lenagol0vach/commercial",
+          "stream_key": "https://api.twitch.tv/kraken/channels/lenagol0vach/stream_key",
+          "chat": "https://api.twitch.tv/kraken/chat/lenagol0vach",
+          "features": "https://api.twitch.tv/kraken/channels/lenagol0vach/features",
+          "subscriptions": "https://api.twitch.tv/kraken/channels/lenagol0vach/subscriptions",
+          "editors": "https://api.twitch.tv/kraken/channels/lenagol0vach/editors",
+          "teams": "https://api.twitch.tv/kraken/channels/lenagol0vach/teams",
+          "videos": "https://api.twitch.tv/kraken/channels/lenagol0vach/videos"
+        }
+      },
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/streams/lenagol0vach"
+      }
+    },
+    {
+      "_id": 24483933968,
+      "game": "Hearthstone",
+      "viewers": 3891,
+      "video_height": 1080,
+      "average_fps": 60.0300150075,
+      "delay": 0,
+      "created_at": "2017-02-10T09:12:17Z",
+      "is_playlist": false,
+      "preview": {
+        "small": "https://static-cdn.jtvnw.net/previews-ttv/live_user_thijshs-80x45.jpg",
+        "medium": "https://static-cdn.jtvnw.net/previews-ttv/live_user_thijshs-320x180.jpg",
+        "large": "https://static-cdn.jtvnw.net/previews-ttv/live_user_thijshs-640x360.jpg",
+        "template": "https://static-cdn.jtvnw.net/previews-ttv/live_user_thijshs-{width}x{height}.jpg"
+      },
+      "channel": {
+        "mature": false,
+        "partner": true,
+        "status": "G2.Thijs - Practice my EU Winter Playoffs lineup for tomorrow!",
+        "broadcaster_language": "en",
+        "display_name": "ThijsHS",
+        "game": "Hearthstone",
+        "language": "nl",
+        "_id": 57025612,
+        "name": "thijshs",
+        "created_at": "2014-02-17T20:50:47Z",
+        "updated_at": "2017-02-10T09:33:06Z",
+        "delay": null,
+        "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/thijshs-profile_image-d1855265a6df68d1-300x300.png",
+        "banner": null,
+        "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/thijshs-channel_offline_image-ea0dd47fcc3f2b48-1920x1080.png",
+        "background": null,
+        "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/thijshs-profile_banner-4ccaadd15af94b01-480.jpeg",
+        "profile_banner_background_color": null,
+        "url": "https://www.twitch.tv/thijshs",
+        "views": 15686882,
+        "followers": 245665,
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/channels/thijshs",
+          "follows": "https://api.twitch.tv/kraken/channels/thijshs/follows",
+          "commercial": "https://api.twitch.tv/kraken/channels/thijshs/commercial",
+          "stream_key": "https://api.twitch.tv/kraken/channels/thijshs/stream_key",
+          "chat": "https://api.twitch.tv/kraken/chat/thijshs",
+          "features": "https://api.twitch.tv/kraken/channels/thijshs/features",
+          "subscriptions": "https://api.twitch.tv/kraken/channels/thijshs/subscriptions",
+          "editors": "https://api.twitch.tv/kraken/channels/thijshs/editors",
+          "teams": "https://api.twitch.tv/kraken/channels/thijshs/teams",
+          "videos": "https://api.twitch.tv/kraken/channels/thijshs/videos"
+        }
+      },
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/streams/thijshs"
+      }
+    },
+    {
+      "_id": 24482140768,
+      "game": "Hearthstone",
+      "viewers": 2053,
+      "video_height": 1080,
+      "average_fps": 60.0375234522,
+      "delay": 0,
+      "created_at": "2017-02-10T02:53:52Z",
+      "is_playlist": false,
+      "preview": {
+        "small": "https://static-cdn.jtvnw.net/previews-ttv/live_user_asmodaitv-80x45.jpg",
+        "medium": "https://static-cdn.jtvnw.net/previews-ttv/live_user_asmodaitv-320x180.jpg",
+        "large": "https://static-cdn.jtvnw.net/previews-ttv/live_user_asmodaitv-640x360.jpg",
+        "template": "https://static-cdn.jtvnw.net/previews-ttv/live_user_asmodaitv-{width}x{height}.jpg"
+      },
+      "channel": {
+        "mature": false,
+        "partner": true,
+        "status": "CoL.Asmodai  NightOwl #TheSnail",
+        "broadcaster_language": "en",
+        "display_name": "AsmodaiTV",
+        "game": "Hearthstone",
+        "language": "no",
+        "_id": 52968416,
+        "name": "asmodaitv",
+        "created_at": "2013-12-10T13:59:13Z",
+        "updated_at": "2017-02-10T09:33:15Z",
+        "delay": null,
+        "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/asmodaitv-profile_image-0f62202546cff589-300x300.png",
+        "banner": null,
+        "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/asmodaitv-channel_offline_image-4dbe78b0b0acc922-1920x1080.jpeg",
+        "background": null,
+        "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/asmodaitv-profile_banner-f35ccc6ee1ea18b1-480.jpeg",
+        "profile_banner_background_color": "#121112",
+        "url": "https://www.twitch.tv/asmodaitv",
+        "views": 4229659,
+        "followers": 55089,
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/channels/asmodaitv",
+          "follows": "https://api.twitch.tv/kraken/channels/asmodaitv/follows",
+          "commercial": "https://api.twitch.tv/kraken/channels/asmodaitv/commercial",
+          "stream_key": "https://api.twitch.tv/kraken/channels/asmodaitv/stream_key",
+          "chat": "https://api.twitch.tv/kraken/chat/asmodaitv",
+          "features": "https://api.twitch.tv/kraken/channels/asmodaitv/features",
+          "subscriptions": "https://api.twitch.tv/kraken/channels/asmodaitv/subscriptions",
+          "editors": "https://api.twitch.tv/kraken/channels/asmodaitv/editors",
+          "teams": "https://api.twitch.tv/kraken/channels/asmodaitv/teams",
+          "videos": "https://api.twitch.tv/kraken/channels/asmodaitv/videos"
+        }
+      },
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/streams/asmodaitv"
+      }
+    }
+  ],
+  "_links": {
+    "self": "https://api.twitch.tv/kraken/streams?game=Hearthstone&limit=5&stream_type=live",
+    "next": "https://api.twitch.tv/kraken/streams?game=Hearthstone&limit=5&offset=5&stream_type=live",
+    "featured": "https://api.twitch.tv/kraken/streams/featured",
+    "summary": "https://api.twitch.tv/kraken/streams/summary",
+    "followed": "https://api.twitch.tv/kraken/streams/followed"
+  }
+}

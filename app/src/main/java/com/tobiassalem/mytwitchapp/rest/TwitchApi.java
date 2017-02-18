@@ -8,7 +8,8 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 /**
- * Interface defining the Twitch API endpoints
+ * Interface defining the Twitch API endpoints.
+ * See https://github.com/justintv/Twitch-API
  *
  * @author Tobias
  */

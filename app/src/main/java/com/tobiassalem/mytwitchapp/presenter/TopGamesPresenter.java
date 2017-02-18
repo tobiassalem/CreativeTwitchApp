@@ -21,9 +21,6 @@ import java.util.List;
 public class TopGamesPresenter implements TopGamesResultListener {
 
     private final Logger logger = LoggerFactory.getLogger(TopGamesPresenter.class);
-
-    private static final String LOG_TAG = TopGamesPresenter.class.getSimpleName();
-
     private final TopGamesView view;
     private final TwitchAPIInteractor interactor;
 
@@ -45,8 +42,7 @@ public class TopGamesPresenter implements TopGamesResultListener {
 
         } else {
             view.onGamesResultMissing();
-            logger.error("resultModel: " +resultModel);
-            //Log.e(LOG_TAG, "resultModel: " +resultModel);
+            logger.error("resultModel is missing data: " +resultModel);
         }
     }
 
@@ -59,6 +55,5 @@ public class TopGamesPresenter implements TopGamesResultListener {
         List<TopGame> topGames = resultModel.getTopGames();
         String modelInfo = "resultModel.total: " + resultModel.getTotal() + ", topGames.size: " + topGames.size()+ ", links: " +resultModel.getLinks();
         logger.info(modelInfo);
-        //Log.i(LOG_TAG, modelInfo);
     }
 }

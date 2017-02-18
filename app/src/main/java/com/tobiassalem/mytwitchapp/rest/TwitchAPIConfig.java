@@ -7,14 +7,23 @@ package com.tobiassalem.mytwitchapp.rest;
  */
 public class TwitchAPIConfig {
 
+    private static boolean testMode = false;
+    private static String serverBaseUrlTestMode;
+
     private String clientId;
     private String serverBaseUrl;
+    private String jsonVersion;
     private int limitNrOfGames;
     private int limitNrOfStreams;
 
-    public TwitchAPIConfig(String clientId, String serverBaseUrl, int limitNrOfGames, int limitNrOfStreams) {
+    public TwitchAPIConfig(String clientId, String serverBaseUrl, String jsonVersion, int limitNrOfGames, int limitNrOfStreams) {
         this.clientId = clientId;
-        this.serverBaseUrl = serverBaseUrl;
+        if (testMode) {
+            this.serverBaseUrl = serverBaseUrlTestMode;
+        } else {
+            this.serverBaseUrl = serverBaseUrl;
+        }
+        this.jsonVersion = jsonVersion;
         this.limitNrOfGames = limitNrOfGames;
         this.limitNrOfStreams = limitNrOfStreams;
     }
@@ -27,24 +36,21 @@ public class TwitchAPIConfig {
         return serverBaseUrl;
     }
 
-    public void setServerBaseUrl(String serverBaseUrl) {
-        this.serverBaseUrl = serverBaseUrl;
+    public String getJsonVersion() {
+        return this.jsonVersion;
     }
 
     public int getLimitNrOfGames() {
         return limitNrOfGames;
     }
 
-    public void setLimitNrOfGames(int limitNrOfGames) {
-        this.limitNrOfGames = limitNrOfGames;
-    }
-
     public int getLimitNrOfStreams() {
         return limitNrOfStreams;
     }
 
-    public void setLimitNrOfStreams(int limitNrOfStreams) {
-        this.limitNrOfStreams = limitNrOfStreams;
+    public static void setServerBaseUrlTestMode(String serverBaseUrlTestMode) {
+        TwitchAPIConfig.serverBaseUrlTestMode = serverBaseUrlTestMode;
+        testMode = true;
     }
 
 }

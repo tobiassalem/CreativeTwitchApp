@@ -3,6 +3,7 @@
     <integer name="splashTimeout">2</integer>
     <string name="serverBaseUrl">https://api.twitch.tv/</string>
     <string name="clientId">pffsriehg601nt3k35wz9g5xopns242</string>
+    <string name="jsonVersion">v3</string>
     <integer name="defaultTopGamesLimit">5</integer>
     <integer name="defaultTopStreamsLimit">10</integer>
 </resources>
